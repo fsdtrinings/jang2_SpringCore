@@ -1,13 +1,31 @@
 package com.mkj.bank.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 public class Account {
 
+	@Value("${account.name}")
 	private String accountName;
+	@Value("New Delhi")
 	private String branchName;
+	@Value("78787874")
 	private int accountNumber;
+	@Value("#{2000+6000}")
 	private int balance;
 	
+	@Autowired
 	private CustomerRelationshipExecutive executive;
+	@Autowired
+	private KYCDetails kycDetails;
+	
+	// List<Stocks>
+	// List<Policy>
+	// List<Insurance>
 	
 	public Account() {
 		super();
@@ -23,6 +41,19 @@ public class Account {
 		System.out.println("--- constructor called for "+this.accountName);
 	}
 	
+	
+	
+
+
+	public KYCDetails getKycDetails() {
+		return kycDetails;
+	}
+
+	
+	public void setKycDetails(KYCDetails kycDetails) {
+		this.kycDetails = kycDetails;
+	}
+
 	public CustomerRelationshipExecutive getExecutive() {
 		return executive;
 	}
@@ -59,7 +90,9 @@ public class Account {
 	@Override
 	public String toString() {
 	
-		return accountName+", "+accountNumber+", "+balance+" , "+branchName+" , "+executive.getName()+" , "+executive.getPhone();
+		
+		return accountName+", "+accountNumber+", "+balance+" , "+branchName+" ,\n "+executive.getName()+" , "+executive.getPhone()+"\n"
+				+ ""+kycDetails+" ";
 		 
 	
 	}

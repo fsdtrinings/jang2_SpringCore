@@ -1,10 +1,18 @@
 package com.mkj.bank.entity;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class CustomerRelationshipExecutive {
 
+	@Value("101")
 	private int empId;
+	@Value("#{account.balance>5000?'Neha':'No Executive assign'}")
 	private String name;
+	@Value("#{account.balance>5000?'neha@abcBank.com':'No Executive assign'}")
 	private String email;
+	@Value("#{account.balance>5000?'98989845':'1800582480'}")
 	private long phone;
 	private float userRatings;
 	public CustomerRelationshipExecutive() {
