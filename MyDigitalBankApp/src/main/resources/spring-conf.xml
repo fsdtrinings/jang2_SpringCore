@@ -10,5 +10,44 @@
 	</bean>
 	
 	
+	<bean id="savingAccount" class="com.mkj.bank.entity.Account" >
+		<constructor-arg value="Mahesh" name="accountName"/>
+		<constructor-arg value="Pune-Central" name="branchName"/>
+		<constructor-arg value="1025150" name="accountNumber"/>
+		<constructor-arg value="15000" name="balance"/>
+		
+	</bean>
+	
+	<bean id="currentAccount" class="com.mkj.bank.entity.Account" >
+		<property name="accountName" value="Rishi Kappor"/>
+		<property name="branchName" value="Mumbai"/>
+		<property name="accountNumber" value="484848"/>
+		<property name="balance" value="4500"/>
+		<property name="executive" ref="executive"></property>
+	</bean>
+	
+	<bean id="executive" class="com.mkj.bank.entity.CustomerRelationshipExecutive">
+		<property name="empId" value="101"/>
+		<property name="name" value="Vijay Kumar"/>
+		<property name="email" value="vijay@abcBank.com"/>
+		<property name="phone" value="788442001"/>
+		<property name="userRatings" value="4.5"/>
+		
+		
+	</bean>	
+	
 	
 </beans>
+
+
+
+
+
+
+
+
+
+
+
+
+

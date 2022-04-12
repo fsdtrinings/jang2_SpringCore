@@ -6,17 +6,31 @@ public class Account {
 	private String branchName;
 	private int accountNumber;
 	private int balance;
+	
+	private CustomerRelationshipExecutive executive;
+	
 	public Account() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Account(String accountName, String branchName, int accountNumber, int balance) {
 		super();
 		this.accountName = accountName;
 		this.branchName = branchName;
 		this.accountNumber = accountNumber;
 		this.balance = balance;
+		System.out.println("--- constructor called for "+this.accountName);
 	}
+	
+	public CustomerRelationshipExecutive getExecutive() {
+		return executive;
+	}
+
+	public void setExecutive(CustomerRelationshipExecutive executive) {
+		this.executive = executive;
+	}
+
 	public String getAccountName() {
 		return accountName;
 	}
@@ -40,6 +54,14 @@ public class Account {
 	}
 	public void setBalance(int balance) {
 		this.balance = balance;
+	}
+
+	@Override
+	public String toString() {
+	
+		return accountName+", "+accountNumber+", "+balance+" , "+branchName+" , "+executive.getName()+" , "+executive.getPhone();
+		 
+	
 	}
 	
 	

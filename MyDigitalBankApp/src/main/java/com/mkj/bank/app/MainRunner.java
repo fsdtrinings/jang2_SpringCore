@@ -18,12 +18,12 @@ public class MainRunner {
 		// Type 1 object - default object 
 		
 		// account object without spring 
-		Account a = new Account();
-		System.out.println("-------->> Without Spring "+a);
+		//Account a = new Account();
+		//System.out.println("-------->> Without Spring "+a);
 		
 		// account object through Spring (Factory class of object creation)
 		
-		Account a2 = (Account)spring.getBean("defaultSavingAccount");
+		Account a2 = (Account)spring.getBean("currentAccount");
 		System.out.println("------->> Through Spring "+a2);
 		
 		
