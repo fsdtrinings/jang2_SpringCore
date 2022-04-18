@@ -1,0 +1,12 @@
+create REST Endpoints for 
+
+class Product
+{
+    int pid;
+    String productName;
+    String productCategory;
+    int cost;
+    int unitsInHand;
+    float userRating;
+
+}
