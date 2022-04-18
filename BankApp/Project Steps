@@ -1,0 +1,15 @@
+Project Steps
+
+----- STEP 1 Project structure -----------
+1) Create Project Structure
+2) Create GIT repository and push the project 
+3) team members pull the project accordingly 
+
+
+
+----------- STEP 2 ---- Developmet start ----
+4) based on your module create table 
+5) insert sample data 
+6) write code to execute and fetch sample data for json creation 
+7) execute endpoint(URI) in postman and extract JSON from it 
+8) save JSON for further use
