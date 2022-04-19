@@ -25,3 +25,14 @@
         "secondAccount": 0,
         "transactionDate": "2022-04-17"
     }
+    
+    // -------- Account Client DTO JSON 
+    {
+    "accountNumber": 4,
+    "username": "ashish123",
+    "balance": 15000,
+    "firstName": "Ashish",
+    "lastName": "Bansal",
+    "panCard": "BHb7778",
+    "phoneNumber": 4845411478
+}
