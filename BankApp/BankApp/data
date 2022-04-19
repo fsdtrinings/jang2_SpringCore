@@ -1,0 +1,38 @@
+
+ {
+        "accountNumber": 1,
+        "username": "ramesh123",
+        "password": "123",
+        "role": "client",
+        "balance": 17000,
+        "userDeatils": {
+            "firstName": "Ramesh",
+            "lastName": "Kumar",
+            "houseAddress": "A123",
+            "city": "New Delhi",
+            "panNumber": "Bjd7778",
+            "mobileNumber": 965411478
+        },
+        "min_BALANCE": 5000
+    }
+    
+    
+     {
+        "transactionId": 1,
+        "accountNumber": 1,
+        "transactionType": "deposit",
+        "amountOfTransaction": 2000,
+        "secondAccount": 0,
+        "transactionDate": "2022-04-17"
+    }
+    
+    // -------- Account Client DTO JSON 
+    {
+    "accountNumber": 4,
+    "username": "ashish123",
+    "balance": 15000,
+    "firstName": "Ashish",
+    "lastName": "Bansal",
+    "panCard": "BHb7778",
+    "phoneNumber": 4845411478
+}
