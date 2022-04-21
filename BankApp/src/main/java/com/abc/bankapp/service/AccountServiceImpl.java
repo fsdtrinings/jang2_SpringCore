@@ -13,6 +13,7 @@ import com.abc.bankapp.entity.Transaction;
 import com.abc.bankapp.entity.UserDetails;
 import com.abc.bankapp.exceptions.InsufficientFundException;
 import com.abc.bankapp.exceptions.InvalidAccountNumberException;
+import com.abc.bankapp.exceptions.InvalidUserExcption;
 import com.abc.bankapp.repository.AccountRepository;
 
 @Service
@@ -24,9 +25,11 @@ public class AccountServiceImpl implements AccountService {
 	AccountRepository accountRepository;
 	
 	@Override
-	public String login(String username, String password) {
-		// TODO Auto-generated method stub
-		return null;
+	public String login(String username, String password)throws InvalidUserExcption
+	{
+		
+		String role = accountRepository.verifyUser(username, password);
+		return role;
 	}
 
 	@Override
@@ -88,9 +91,19 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public Account getAccount(int accountNumber) {
+	public Account getAccount(int accountNumber)throws InvalidAccountNumberException 
+	{
+		try {
+			System.out.println(" ------->> 1 before findById call");
+			Account returnedAccount =  accountRepository.findById(accountNumber).get();
+			System.out.println("----->> 2 Inside ServiceIMPL class getAccountById returned Account is "+returnedAccount);
+			return returnedAccount;
+		} 
+		catch (java.util.NoSuchElementException e) {
+			System.out.println("---->>2 inside CATCH block of ServiceImpl class ");
+			throw new InvalidAccountNumberException(accountNumber, e.getMessage());
+		}
 		
-		return accountRepository.findById(accountNumber).get();
 	}
 
 

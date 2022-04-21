@@ -11,12 +11,13 @@ import com.abc.bankapp.entity.Transaction;
 import com.abc.bankapp.entity.UserDetails;
 import com.abc.bankapp.exceptions.InsufficientFundException;
 import com.abc.bankapp.exceptions.InvalidAccountNumberException;
+import com.abc.bankapp.exceptions.InvalidUserExcption;
 
 @Service
 public interface AccountService {
 	
 	/* provide username & password and get Role if verfied user else through Custom Exception InvalidUser*/
-	public String login(String username,String password);
+	public String login(String username,String password) throws InvalidUserExcption;
 
 	public boolean logout(String username);
 	
@@ -43,7 +44,7 @@ public interface AccountService {
 		
 	public List<Account> getAllAccounts();
 	public boolean insertAccount(Account a);
-	public Account getAccount(int accountNumber);
+	public Account getAccount(int accountNumber)throws InvalidAccountNumberException;
 	
 	
 	

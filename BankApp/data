@@ -35,4 +35,11 @@
     "lastName": "Bansal",
     "panCard": "BHb7778",
     "phoneNumber": 4845411478
+    
+    //------------  login DTO ----------
+    
+     {
+   "username": "ashish123",
+   "password": "12565757378"
+  }
 }
