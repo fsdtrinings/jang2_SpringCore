@@ -41,11 +41,11 @@ public interface AccountService {
 	public List<Transaction> getTransactionBasedOnAccountNumber(int accountNumber)throws InvalidAccountNumberException;
 	public List<Transaction> getTransactionBasedOnAccountNumber(int accountNumber,LocalDate d1,LocalDate d2)throws InvalidAccountNumberException;
 	
-		
+	public List<Account> getAllAccountsByBalanceHtoL();
 	public List<Account> getAllAccounts();
 	public boolean insertAccount(Account a);
 	public Account getAccount(int accountNumber)throws InvalidAccountNumberException;
-	
+	public boolean doDeposite(int amount,int accountId)throws InvalidAccountNumberException;
 	
 	
 }
